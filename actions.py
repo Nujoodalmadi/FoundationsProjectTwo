@@ -12,17 +12,16 @@ def print_stores():
     prints the list of stores in a nice readable format.
     """
     for i in stores:
-        print(i)
+        print(i.name)
 
 def get_store(store_name):
     """
     receives a name for a store, and returns the store object with that name.
     """
     for i in stores:
-        if store_name.capitalize() == i.name:
-            return i.name
-    else:
-        return False
+        if store_name.lower() == i.name.lower():
+            return i
+    return False
 
 def pick_store():
     """
@@ -66,4 +65,3 @@ def shop():
 
 def thank_you():
     print("Thank you for shopping with us at %s" % site_name)
-
